@@ -1,4 +1,3 @@
-
 import { useState } from 'react';
 
 const MailboxForm = ({ addBox }) => {
@@ -11,25 +10,20 @@ const MailboxForm = ({ addBox }) => {
   };
 
   return (
-    <form className="mailbox-form" onSubmit={handleSubmit}>
-      <label>
-        Boxholder Name:
-        <input
-          type="text"
-          value={boxholder}
-          onChange={(e) => setBoxholder(e.target.value)}
-          required
-        />
-      </label>
-      <label>
-        Box Size:
-        <select value={boxSize} onChange={(e) => setBoxSize(e.target.value)}>
-          <option value="Small">Small</option>
-          <option value="Medium">Medium</option>
-          <option value="Large">Large</option>
-        </select>
-      </label>
-      <button type="submit">Add Mailbox</button>
+    <form onSubmit={handleSubmit}>
+      <input
+        type="text"
+        value={boxholder}
+        onChange={(e) => setBoxholder(e.target.value)}
+        placeholder="Boxholder Name"
+        required
+      />
+      <select value={boxSize} onChange={(e) => setBoxSize(e.target.value)}>
+        <option value="Small">Small</option>
+        <option value="Medium">Medium</option>
+        <option value="Large">Large</option>
+      </select>
+      <button type="submit">Create Mailbox</button>
     </form>
   );
 };
